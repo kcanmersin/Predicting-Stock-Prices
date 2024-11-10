@@ -44,5 +44,5 @@ def add_technical_indicators(input_file):
     print(f"Data with technical indicators saved to {output_file}")
 
 if __name__ == "__main__":
-    input_file = "AAPL_2023-09-22_2024-11-09_data.csv"
+    input_file = "AAPL_data.csv"
     add_technical_indicators(input_file)

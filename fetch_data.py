@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 import os
 
-def fetch_stock_data(ticker, days_back=415):
+def fetch_stock_data(ticker, days_back=500):
     end_date = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
     start_date = (datetime.now() - timedelta(days=days_back)).strftime('%Y-%m-%d')
     
@@ -13,7 +13,7 @@ def fetch_stock_data(ticker, days_back=415):
     stock_data.reset_index(inplace=True)
     stock_data.columns = ['Date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
 
-    output_file = f"{ticker}_{start_date}_{end_date}_data.csv"
+    output_file = f"{ticker}_data.csv"
 
     if os.path.exists(output_file):
         os.remove(output_file)
